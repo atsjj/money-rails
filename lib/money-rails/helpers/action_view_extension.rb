@@ -7,9 +7,9 @@ module MoneyRails
 
     def humanized_money(value, symbol=false)
       if value.is_a?(Money)
-        value.format(:no_cents_if_whole => true, :symbol => symbol)
+        value.format(:symbol => symbol)
       elsif value.respond_to?(:to_money)
-        value.to_money.format(:no_cents_if_whole => true, :symbol => symbol)
+        value.to_money.format(:symbol => symbol)
       else
         ""
       end
